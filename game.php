@@ -16,8 +16,9 @@ if(!isset($_SESSION['UserData']['Username'])){
 </head>
 <body>
         <main class="gamebg"></main>
+        <div></div>
             <?php
-            include 'footer.html'
+            include 'footer.php'
             ?>
 </body>
 </html>
