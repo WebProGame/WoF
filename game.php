@@ -38,9 +38,27 @@ function revealLetter($character)
     <title>Play Wheel of Fortune</title>
 </head>
 <body>
+    <audio loop autoplay>
+        <source src="./music.mp3" type="audio/mpeg">
+    </audio>
     <main class="gamebg">
 
-    <img src="./gameLogo.png" class="logo">
+    <img src="./logo.gif" class="logo">
+        <?php
+        $count = 0;
+        if (isset($_POST["word"]))
+        {
+            if(strtolower($_POST["word"]) == "sandwich" )
+        {
+            echo "CONGRATULATIONS YOU GOT IT RIGHT!";
+        }
+        else
+            {
+                echo "<h2 id='mistake'>That was wrong you lose $500</h2>";
+                $_POST["word"] = [];
+            }
+    }
+        ?>
         <div class="displayBox">
             <h2 id="displayHeader">Category: Food</h2>
             <div class="grid-container">
@@ -220,6 +238,8 @@ function revealLetter($character)
             <legend>USER INPUT</legend>
             <label for="letter">Enter a consonant:</label>
             <input type="text" id="formLetter" name="letter" maxlength="1"><br><br>
+            <label for="letter">Would you like to guess? (optional)</label>
+            <input type="text" id="formLetter" name="word" maxlength="16"><br><br>
             <input type="submit" value="Submit">
             </fieldset>
             <?php
