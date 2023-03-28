@@ -32,6 +32,12 @@
     border-radius: 25px;
     z-index:2;
 }
+#error
+{
+    text-align: center;
+    font-weight: bolder;
+    color:red;
+}
 #submit
 {
   background-color: #040faa;

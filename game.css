@@ -1,0 +1,122 @@
+html, body
+{
+    height:98%;
+    margin:0;
+}
+.logo
+{
+    width:10%;
+    margin-top: 1%;
+    margin-left: 42.5%;
+    margin-left: 42.5%;
+}
+.displayBox
+{
+    width:40%;
+    margin-left: 60%;
+   transform: translateY(70%);
+}
+#displayHeader
+{
+    background-color: rgba(0, 0, 0, 0.521);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:white;
+    width:60%;
+    text-align: center;
+}
+.gamebg
+{
+    width:100%;
+    height:100%;
+    background-image: url('./game-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.grid-container {
+    position: relative;
+    width:60%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  }
+  .grid-containerXL {
+    position: relative;
+    margin-left:-5%;
+    width:75%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  }
+.grid-item {
+    background-color:rgb(121, 252, 128); 
+    border: 0.15vw solid rgba(20, 97, 5, 0.8);
+    color:rgb(121, 252, 128); 
+    padding: 30%;
+    font-size: 30pt;
+    text-align: center;
+    z-index: 2;
+  }
+  .temp {
+    background-color:rgb(255, 255, 255);
+    color:white;
+    border: 0.15vw solid rgba(0, 0, 0, 0.8);
+    padding: 30%;
+    font-size: 30pt;
+    text-align: center;
+    z-index: 2;
+  }
+  #hidden
+  {
+    opacity: 0;
+  }
+  #revealed
+  {
+    font-size: 14pt;
+    color:black;
+    font-weight: bold;
+    line-height: 50%;
+    z-index: 2;
+  }
+  .input
+  {
+    width:20%;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.637);
+    margin-left: 40%;
+    margin-right: 40%;
+   transform: translateY(300%);
+  }
+  #mistake
+  {
+    color:red;
+    font-size: 30pt;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .footer
+{
+    color:white;
+    list-style:none;
+}
+ul.footer li
+{
+    display: inline-block;
+    padding: 0% 0.5%;
+    min-width: 2%;
+  text-align: center;
+}
+ul.footer li:not(:last-child)
+{
+    border-right: 1px solid white;
+}
+  #regLink
+{
+    color:rgb(255, 238, 0);
+}
+#regLink:hover
+{
+    color:rgb(255, 25, 25);
+}
+  body
+{
+    background-color: rgb(0, 0, 0);
+}
