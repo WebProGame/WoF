@@ -39,7 +39,7 @@
             <div class="loginBox">
                 <img src="./logo.gif" alt="logo" id="logo">
                 <?php if(isset($msg)){
-                    print_r($logins);
+                //    print_r($logins);
                  echo $msg;
                  } ?>
                 <label for="name" class="credentials"><b>Username</b></label>

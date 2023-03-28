@@ -45,7 +45,6 @@ function revealLetter($character)
 
     <img src="./logo.gif" class="logo">
         <?php
-        $count = 0;
         if (isset($_POST["word"]))
         {
             if(strtolower($_POST["word"]) == "sandwich" )
@@ -55,7 +54,6 @@ function revealLetter($character)
         else
             {
                 echo "<h2 id='mistake'>That was wrong you lose $500</h2>";
-                $_POST["word"] = [];
             }
     }
         ?>
@@ -242,10 +240,7 @@ function revealLetter($character)
             <input type="text" id="formLetter" name="word" maxlength="16"><br><br>
             <input type="submit" value="Submit">
             </fieldset>
-            <?php
-        echo (sizeof($_SESSION['wordArr']));
-        print_r($_SESSION['wordArr']);
-        ?>
+            
             </form>
     </main>
             <?php
