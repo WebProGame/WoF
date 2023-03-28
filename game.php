@@ -39,9 +39,6 @@ function revealLetter($character)
 </head>
 <body>
     <main class="gamebg">
-        <?php
-        echo (sizeof($_SESSION['wordArr']));
-        ?>
 
     <img src="./gameLogo.png" class="logo">
         <div class="displayBox">
@@ -87,110 +84,111 @@ function revealLetter($character)
                         if (strtolower($_POST["letter"]) == 's')
                             {
                                 $temp = revealLetter($_POST["letter"]);
-                                    if (in_array('s',$temp))
-                                        {
-                                            echo "<h1 id='revealed'>s</h1>";
-                                        }
-                            }
                      }
+                     if (in_array('s',$_SESSION['wordArr']))
+                     {
+                         echo "<h1 id='revealed'>s</h1>";
+                     }
+         }
                     ?>
                     </div>
                 <div class="temp">
                 <?php
                 if (isset($_POST["letter"])){
-                    if (strtolower($_POST["letter"]) == 's')
+                    if (strtolower($_POST["letter"]) == 'a')
                         {
                             $temp = revealLetter($_POST["letter"]);
-                                if (in_array('s',$temp))
-                                    {
-                                        echo "<h1 id='revealed'>s</h1>";
-                                    }
-                        }
                  }
+                 if (in_array('a',$_SESSION['wordArr']))
+                 {
+                     echo "<h1 id='revealed'>a</h1>";
+                 }
+     }
                     ?>
                     </div>
                 <div class="temp">
                 <?php
                     if (isset($_POST["letter"])){
-                        if (strtolower($_POST["letter"]) == 's')
+                        if (strtolower($_POST["letter"]) == 'n')
                             {
                                 $temp = revealLetter($_POST["letter"]);
-                                    if (in_array('s',$temp))
-                                        {
-                                            echo "<h1 id='revealed'>s</h1>";
-                                        }
-                            }
                      }
+                     if (in_array('n',$_SESSION['wordArr']))
+                     {
+                         echo "<h1 id='revealed'>n</h1>";
+                     }
+         }
                     ?>    
                 </div>
                 <div class="temp">
                 <?php
                      if (isset($_POST["letter"])){
-                        if (strtolower($_POST["letter"]) == 's')
+                        if (strtolower($_POST["letter"]) == 'd')
                             {
                                 $temp = revealLetter($_POST["letter"]);
-                                    if (in_array('s',$temp))
-                                        {
-                                            echo "<h1 id='revealed'>s</h1>";
-                                        }
-                            }
                      }
+                     if (in_array('d',$_SESSION['wordArr']))
+                     {
+                         echo "<h1 id='revealed'>d</h1>";
+                     }
+         }
                     ?>    
                 </div>
                 <div class="temp">
                 <?php
                      if (isset($_POST["letter"])){
-                        if (strtolower($_POST["letter"]) == 's')
+                        if (strtolower($_POST["letter"]) == 'w')
                             {
                                 $temp = revealLetter($_POST["letter"]);
-                                    if (in_array('s',$temp))
-                                        {
-                                            echo "<h1 id='revealed'>s</h1>";
-                                        }
                             }
+                     }
+                     if (in_array('w',$_SESSION['wordArr']))
+                                        {
+                                            echo "<h1 id='revealed'>w</h1>";
+                                        }
+                    ?>    
+                </div>
+                <div class="temp">
+                <?php
+                    if (isset($_POST["letter"])){
+                        if (strtolower($_POST["letter"]) == 'i')
+                            {
+                                $temp = revealLetter($_POST["letter"]);
+                     }
+
+                    }
+                    if (in_array('i',$_SESSION['wordArr']))
+                     {
+                         echo "<h1 id='revealed'>i</h1>";
                      }
                     ?>    
                 </div>
                 <div class="temp">
                 <?php
                     if (isset($_POST["letter"])){
-                        if (strtolower($_POST["letter"]) == 's')
+                        if (strtolower($_POST["letter"]) == 'c')
                             {
                                 $temp = revealLetter($_POST["letter"]);
-                                    if (in_array('s',$temp))
-                                        {
-                                            echo "<h1 id='revealed'>s</h1>";
-                                        }
                             }
                      }
+                     if (in_array('c',$_SESSION['wordArr']))
+                                        {
+                                            echo "<h1 id='revealed'>c</h1>";
+                                        }
                     ?>    
                 </div>
                 <div class="temp">
                 <?php
                     if (isset($_POST["letter"])){
-                        if (strtolower($_POST["letter"]) == 's')
+                        if (strtolower($_POST["letter"]) == 'h')
                             {
                                 $temp = revealLetter($_POST["letter"]);
-                                    if (in_array('s',$temp))
-                                        {
-                                            echo "<h1 id='revealed'>s</h1>";
-                                        }
                             }
                      }
-                    ?>    
-                </div>
-                <div class="temp">
-                <?php
-                    if (isset($_POST["letter"])){
-                        if (strtolower($_POST["letter"]) == 's')
-                            {
-                                $temp = revealLetter($_POST["letter"]);
-                                    if (in_array('s',$temp))
+                     if (in_array('h',$_SESSION['wordArr']))
                                         {
-                                            echo "<h1 id='revealed'>s</h1>";
+                                            echo "<h1 id='revealed'>h</h1>";
                                         }
-                            }
-                     }
                     ?>
                     </div>
                 <div class="grid-item">?</div>
@@ -224,6 +222,10 @@ function revealLetter($character)
             <input type="text" id="formLetter" name="letter" maxlength="1"><br><br>
             <input type="submit" value="Submit">
             </fieldset>
+            <?php
+        echo (sizeof($_SESSION['wordArr']));
+        print_r($_SESSION['wordArr']);
+        ?>
             </form>
     </main>
             <?php
