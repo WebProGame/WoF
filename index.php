@@ -27,5 +27,12 @@
             <?php
             include 'footer.html'
             ?>
+            <?php
+            session_start();
+            // Store Session Data
+            $_SESSION['name']= $username;
+            $_SESSION['pass']=$password;
+            $_SESSION['value'] = $score;
+            ?>
 </body>
 </html>

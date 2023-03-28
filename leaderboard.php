@@ -8,47 +8,7 @@
     <title>Leader Board</title>
 </head>
 <body>
-<?php
- 
- $page_title = 'Leaderboard';
- $meta_description = 'Top players';
-  
- require_once( TEMPLATE_PATH . '/functions.php' ); //Load theme functions
-  
- include  TEMPLATE_PATH . "/includes/header.php";
-  
- // CONTENT
- ?>
-  
- <div class="container">
-     <div class="game-container">
-         <?php
-  
-         $amount = 10;
-  
-         $conn = open_connection();
-         $sql = "SELECT * FROM scores WHERE created_date > DATE_SUB(NOW(), INTERVAL 1 MONTH) ORDER by score DESC LIMIT ".$amount;
-         $st = $conn->prepare($sql);
-         $st->execute();
-         //
-         $row = $st->fetchAll(PDO::FETCH_ASSOC);
-         $list = [];
-         foreach($row as $item){
-             $game = Game::getById($item['game_id']);
-             if($game){
-                 $item['game_title'] = $game->title;
-                 $item['username'] = User::getById($item['user_id'])->username;
-                 array_push($list, $item);
-             }
-         }
-  
-         //Show the list
-         ?>
-  
-         <h3>Top Players</h3>
-         <br>
-  
-         <table class="table table-bordered">
+<table class="table table-bordered">
              <thead>
                  <tr>
                      <th scope="col">#</th>
@@ -76,13 +36,5 @@
          ?>
              </tbody>
          </table>
-     </div>
- </div>
-  
- <?php
-  
- include  TEMPLATE_PATH . "/includes/footer.php"
-  
- ?>
 </body>
 </html>
