@@ -14,7 +14,8 @@ html, body
 {
     width:40%;
     margin-left: 60%;
-   transform: translateY(70%);
+    transform: translateY(-120%);
+
 }
 #displayHeader
 {
@@ -148,7 +149,7 @@ ul.footer li:not(:last-child)
 .button{
   display:inline-block; /* makes that pop-up appear */
   padding: 8px;
-  color: black;
+  color: white;
   border: solid 1px white;
   border-radius: 2px;
   background-color: rgb(121, 252, 128);
@@ -181,4 +182,12 @@ ul.footer li:not(:last-child)
   padding:52px; 
   color:#fff; 
   border:solid 2px white
+}
+
+.bottom {
+  margin-top: -4%;
+}
+
+.answer {
+  margin-top: -65%;
 }
