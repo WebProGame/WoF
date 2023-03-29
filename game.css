@@ -132,12 +132,12 @@ ul.footer li:not(:last-child)
 }
 
 .wheel:hover {
-  animation: rotate 20s infinite;
+  animation: rotate 15s infinite;
 }
 
 @keyframes rotate {
   to {
-    transform: rotate(360deg);
+    transform: rotate(2160deg);
   }
 }
 
