@@ -78,9 +78,10 @@ function revealLetter($character)
         if ($_POST["letter"] == 'a' || $_POST["letter"] == 'e' || $_POST["letter"] == 'i' || $_POST["letter"] == 'o' || $_POST["letter"] == 'u') {
             $_SESSION['totalScore'] = $_SESSION['totalScore'] - 250;
         }
-    }
+        }
         ?>
     
+        <div class="flexy">
         <div class="wheel_box">
             <img src="wheel.png" class= "wheel">
         </div>
@@ -264,17 +265,17 @@ function revealLetter($character)
         <input class="logic-checkbox" type="checkbox" id="wheelPop">
             <section class="wheel-frame">
                 <ul class="wheel-list">
-                    <li class="wheel-itabindex="0" class="button"> Play for $$$ </label>
-                </li>
+                    <label tabindex="0" class="button"> Play for $$$ </label>
+                </ul>
 
             </section>
 
             <section class="pop-content" id="pop">
             <?php echo "You currently have: $" . $_SESSION['totalScore'];?>
-                <label for="wheelPop" tabindex="0" class="button">close popup</label>
             </section>
 
         <!-- end of check box  -->
+        <div class="answer">
             <form action="./game.php" method="post">
         <fieldset class="input">
             <legend>USER INPUT</legend>
@@ -318,10 +319,12 @@ function revealLetter($character)
             </fieldset>
             
             </form>
+            </div>
     </main>
+           <div class="bottom">                            
             <?php
             include 'footer.php'
             ?>
+            </div> 
 </body>
 </html>
-
