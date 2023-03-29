@@ -74,12 +74,13 @@ function revealLetter($character)
         ?>
 
         <?php
+        if (isset($_POST["letter"])) {
         if ($_POST["letter"] == 'a' || $_POST["letter"] == 'e' || $_POST["letter"] == 'i' || $_POST["letter"] == 'o' || $_POST["letter"] == 'u') {
             $_SESSION['totalScore'] = $_SESSION['totalScore'] - 250;
         }
+    }
         ?>
     
-        <div class="flexy">
         <div class="wheel_box">
             <img src="wheel.png" class= "wheel">
         </div>
@@ -323,3 +324,4 @@ function revealLetter($character)
             ?>
 </body>
 </html>
+
