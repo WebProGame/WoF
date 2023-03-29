@@ -1,10 +1,27 @@
 <?php
-
 session_start(); /* Starts the session */
 if (!isset( $_SESSION['wordArr']))
 {
     $_SESSION['wordArr'] = array();
 }
+
+if(!isset($_SESSION['totalScore']))
+    {
+        $_SESSION['totalScore'] = 0;
+    }
+    else
+    {
+        $wheelvals = array(0,6500,1000,3000,7500,1250,3500,2000,5000,0,20000,1500,4000,1750,1000,2000,1250,5000,2500,7500,10000,4500,3500);
+        $spin = array_rand(array_flip($wheelvals), 1);
+        if ($spin == 0) {
+            $_SESSION['totalScore'] = $spin;
+            echo $_SESSION['totalScore'];
+        }
+        else {
+            $_SESSION['totalScore'] += $spin;
+            echo $_SESSION['totalScore'];
+        }
+    }
 ?>
 
 
@@ -25,8 +42,6 @@ function revealLetter($character)
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +72,18 @@ function revealLetter($character)
             }
     }
         ?>
-        <div class="displayBox">
+
+        <?php
+        if ($_POST["letter"] == 'a' || $_POST["letter"] == 'e' || $_POST["letter"] == 'i' || $_POST["letter"] == 'o' || $_POST["letter"] == 'u') {
+            $_SESSION['totalScore'] = $_SESSION['totalScore'] - 250;
+        }
+        ?>
+    
+        <div class="flexy">
+        <div class="wheel_box">
+            <img src="wheel.png" class= "wheel">
+        </div>
+       <div class="displayBox">
             <h2 id="displayHeader">Category: Food</h2>
             <div class="grid-container">
                 <div class="grid-item">?</div>
@@ -230,12 +256,61 @@ function revealLetter($character)
             </div>
 
         </div>
+                                    </div>
 
+
+        <!-- check-box -->
+        <input class="logic-checkbox" type="checkbox" id="wheelPop">
+            <section class="wheel-frame">
+                <ul class="wheel-list">
+                    <li class="wheel-itabindex="0" class="button"> Play for $$$ </label>
+                </li>
+
+            </section>
+
+            <section class="pop-content" id="pop">
+            <?php echo "You currently have: $" . $_SESSION['totalScore'];?>
+                <label for="wheelPop" tabindex="0" class="button">close popup</label>
+            </section>
+
+        <!-- end of check box  -->
             <form action="./game.php" method="post">
         <fieldset class="input">
             <legend>USER INPUT</legend>
-            <label for="letter">Enter a consonant:</label>
-            <input type="text" id="formLetter" name="letter" maxlength="1"><br><br>
+            <label for="letter">Choose a consonant:</label>
+            <select name="letter" id="formLetter">
+             <option value="" selected disabled hidden>Choose here</option>
+             <option value="b">b</option>
+             <option value="c">c</option>
+             <option value="d">d</option>
+             <option value="f">f</option>
+             <option value="g">g</option>
+             <option value="h">h</option>
+             <option value="j">j</option>
+             <option value="k">k</option>
+             <option value="l">l</option>
+             <option value="m">m</option>
+             <option value="n">n</option>
+             <option value="p">p</option>
+             <option value="q">q</option>
+             <option value="r">r</option>
+             <option value="s">s</option>
+             <option value="t">t</option>
+             <option value="v">v</option>
+             <option value="w">w</option>
+             <option value="x">x</option>
+             <option value="y">y</option>
+             <option value="z">z</option>
+            </select><br>
+            <label for="letter">Choose a vowel:</label>
+            <select name="letter" id="formLetter">
+             <option value="" selected disabled hidden>Choose here</option>
+             <option value="a">a</option>
+             <option value="e">e</option>
+             <option value="i">i</option>
+             <option value="o">o</option>
+             <option value="u">u</option>
+            </select><br>
             <label for="letter">Would you like to guess? (optional)</label>
             <input type="text" id="formLetter" name="word" maxlength="16"><br><br>
             <input type="submit" value="Submit">
@@ -248,4 +323,3 @@ function revealLetter($character)
             ?>
 </body>
 </html>
-
