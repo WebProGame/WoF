@@ -129,8 +129,6 @@ ul.footer li:not(:last-child)
 .wheel {
   width: 35%;
   height: 35%;
-
-  animation: rotate 20s infinite;
 }
 
 .wheel:hover {
